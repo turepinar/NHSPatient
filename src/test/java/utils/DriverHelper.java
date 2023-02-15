@@ -38,4 +38,10 @@ public class DriverHelper {
         return driver;
     }
 
+
+
+    public static void tearDown() {
+        driver.quit();
+        driver = null;
+    }
 }

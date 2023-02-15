@@ -1,4 +1,4 @@
-package StepDefinitions;
+package stepDefinitions.nhsLogin;
 
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
@@ -21,6 +21,7 @@ public class Hook {
     @Before
     public void beforeScenario() {
         driver.navigate().to(ConfigReader.readProperty("nhsPatientUrl"));
+        System.out.println("before method runned");
     }
 
     @After
@@ -39,5 +40,6 @@ public class Hook {
             }
         }
 
+        DriverHelper.tearDown();
     }
 }

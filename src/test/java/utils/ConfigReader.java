@@ -15,7 +15,7 @@ public class ConfigReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //more actions surround by try and catch above.
+       // more actions surround by try and catch above.
 
         return properties.getProperty(key);  //i can read the value from properties object using the key.
     }
