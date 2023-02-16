@@ -1,9 +1,9 @@
 package stepDefinitions.nhsLogin;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -18,10 +18,10 @@ public class Hook {
 
     WebDriver driver = DriverHelper.getDriver();
 
-    @Before
+   @Before
     public void beforeScenario() {
-        driver.navigate().to(ConfigReader.readProperty("nhsPatientUrl"));
-        System.out.println("before method runned");
+       // driver.navigate().to(ConfigReader.readProperty("nhsPatientUrl"));
+        System.out.println("BEFOREMETHODFRUNNED");
     }
 
     @After

@@ -41,7 +41,7 @@ public class DriverHelper {
 
 
     public static void tearDown() {
-        driver.quit();
+        driver.close();
         driver = null;
     }
 }

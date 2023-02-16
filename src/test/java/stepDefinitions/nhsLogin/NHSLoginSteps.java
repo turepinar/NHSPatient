@@ -11,25 +11,32 @@ import utils.DriverHelper;
 
 public class NHSLoginSteps {
 
-    WebDriver driver = DriverHelper.getDriver();
-    NHSLoginPage nhsLoginPage = new NHSLoginPage(driver);
+    Hook hook = new Hook();
+    WebDriver driver = hook.driver;
+    //WebDriver driver = DriverHelper.getDriver();
+    NHSLoginPage nhsLoginPage = new NHSLoginPage(hook.driver);
 
     @Given("user navigates to the {string}")
     public void user_navigates_to_the(String epectedUrl) {
-       driver.navigate().to(epectedUrl);
+        driver.navigate().to(epectedUrl);
     }
 
-    @When("enter the correct cridentials")
-    public void enter_the_correct_cridentials() {
-        nhsLoginPage.login("admin", "admin");
+    @When("enter the cridentials username {string} and {string}")
+    public void enter_the_cridentials_username_and(String user, String pass) {
+        nhsLoginPage.login(user, pass);
     }
-
 
     @Then("user should be in the main page of nhs patient")
     public void user_should_be_in_the_main_page_of_nhs_patient() {
+            Assert.assertEquals("NHS patients", driver.getTitle());
+        }
 
-        Assert.assertEquals("NHS patients", driver.getTitle());
+
+    @Then("user should stay in the Login Page")
+    public void user_should_stay_in_the_login_page() {
+            Assert.assertEquals("LoginPage", driver.getTitle());
     }
-
-
 }
+
+
+
