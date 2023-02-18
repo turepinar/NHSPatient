@@ -3,7 +3,7 @@ Feature: Check the functionality of Dashboard
   Background:
     Given user navigates to the "http://www.techtorialacademy.link/"
 
-    @Proj-T10
+  @Proj-T10
   Scenario:
     When logges in to website
     Then should be able to see number of patient with room
