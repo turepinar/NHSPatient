@@ -5,16 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import packages.NHSLoginPage;
-import utils.ConfigReader;
+import pages.NHSLoginPage;
 import utils.DriverHelper;
 
 public class NHSLoginSteps {
 
-    Hook hook = new Hook();
-    WebDriver driver = hook.driver;
-    //WebDriver driver = DriverHelper.getDriver();
-    NHSLoginPage nhsLoginPage = new NHSLoginPage(hook.driver);
+
+    WebDriver driver = DriverHelper.getDriver();
+    NHSLoginPage nhsLoginPage = new NHSLoginPage(driver);
 
     @Given("user navigates to the {string}")
     public void user_navigates_to_the(String epectedUrl) {
