@@ -5,16 +5,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import packages.NHSLoginPage;
-import utils.ConfigReader;
+import pages.NHSLoginPage;
 import utils.DriverHelper;
 
 public class NHSLoginSteps {
 
-    Hook hook = new Hook();
-    WebDriver driver = hook.driver;
-    //WebDriver driver = DriverHelper.getDriver();
-    NHSLoginPage nhsLoginPage = new NHSLoginPage(hook.driver);
+
+    WebDriver driver = DriverHelper.getDriver();
+    NHSLoginPage nhsLoginPage = new NHSLoginPage(driver);
 
     @Given("user navigates to the {string}")
     public void user_navigates_to_the(String epectedUrl) {
@@ -36,6 +34,14 @@ public class NHSLoginSteps {
     public void user_should_stay_in_the_login_page() {
             Assert.assertEquals("LoginPage", driver.getTitle());
     }
+
+
+    @Then("user should get error message as {string}")
+    public void user_should_get_error_message_as(String errorMessage) {
+        Assert.assertEquals(errorMessage, "fill this field out");
+    }
+
+
 }
 
 
