@@ -36,6 +36,14 @@ public class NHSLoginSteps {
     public void user_should_stay_in_the_login_page() {
             Assert.assertEquals("LoginPage", driver.getTitle());
     }
+
+
+    @Then("user should get error message as {string}")
+    public void user_should_get_error_message_as(String errorMessage) {
+        Assert.assertEquals(errorMessage, "fill this field out");
+    }
+
+
 }
 
 

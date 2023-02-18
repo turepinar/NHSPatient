@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue= "stepDefinitions/nhsLogin",
         dryRun= false,
-        //tags =
+        //tags ="@blank",
         plugin= {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
 
