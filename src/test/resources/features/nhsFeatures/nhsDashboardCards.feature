@@ -1,7 +1,6 @@
 Feature: Validate the informations on the dashboard cards
 
   Background:
-  Background:
     Given Admin user navigates to NHS website 'http://www.techtorialacademy.link/'
     When The correct username and password is entered
 

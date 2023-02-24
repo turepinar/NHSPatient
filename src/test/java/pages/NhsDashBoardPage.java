@@ -20,12 +20,24 @@ public class NhsDashBoardPage {
     @FindBy(xpath = "//div[@class= 'col-xs-9 text-right']/child::div[2]")
     List<WebElement> cardTitles;
 
-    public List<String> getCardsDisplayedMessage(){
+    @FindBy(className = "col-sm-12")
+    List<WebElement> tables;
+
+    public List<String> getCardsDisplayedMessage() {
         List<String> actualCardsMessages = new ArrayList<>();
-        for(WebElement card:cardTitles){
+        for (WebElement card : cardTitles) {
             actualCardsMessages.add(BrowserUtils.getTextMethod(card));
         }
         return actualCardsMessages;
     }
 
+    public String validateTablesVisible() {
+        if (!(tables.size() ==0)){
+            System.out.println("tables are displayed");
+        } return "true";
+    }
+
+    public Integer getNumberofTables(){
+       return tables.size();
+    }
 }
