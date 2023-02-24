@@ -1,22 +1,22 @@
-package stepDefinitions.nhsLogin;
+package stepDefinitions.nhsSteps;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import pages.NHSLoginPage;
+import pages.NhsLoginPage;
 import utils.DriverHelper;
 
-public class NHSLoginSteps {
+public class NnsLoginSteps {
 
 
     WebDriver driver = DriverHelper.getDriver();
-    NHSLoginPage nhsLoginPage = new NHSLoginPage(driver);
+    NhsLoginPage nhsLoginPage = new NhsLoginPage(driver);
 
     @Given("user navigates to the {string}")
-    public void user_navigates_to_the(String epectedUrl) {
-        driver.navigate().to(epectedUrl);
+    public void user_navigates_to_the(String expectedUrl) {
+        driver.navigate().to(expectedUrl);
     }
 
     @When("enter the cridentials username {string} and {string}")
@@ -38,7 +38,7 @@ public class NHSLoginSteps {
 
     @Then("user should get error message as {string}")
     public void user_should_get_error_message_as(String errorMessage) {
-        Assert.assertEquals(errorMessage, "fill this field out");
+        Assert.assertEquals(errorMessage, "please fill out this fields");
     }
 
 
