@@ -8,13 +8,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features/nhsPatient",
-        glue= "stepDefinitions/nhsLogin",
+        features = "src/test/resources/features",
+        glue= "stepDefinitions/nhsSteps",
         dryRun= false,
         //tags ="@Expected",
         plugin= {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
 
-public class NHSRunner {
+public class NhsRunner {
 
 }

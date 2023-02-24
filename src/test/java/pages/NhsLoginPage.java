@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NHSLoginPage {
+public class NhsLoginPage {
 
-    public NHSLoginPage(WebDriver driver){
+    public NhsLoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
@@ -22,9 +22,10 @@ public class NHSLoginPage {
     private WebElement loginButton;
 
 
-    public void login(String Username, String Password){
-        this.username.sendKeys(Username);
-        this.password.sendKeys(Password);
+
+    public void login(String username, String password) {
+        this.username.sendKeys(username);
+        this.password.sendKeys(password);
         loginButton.click();
     }
 

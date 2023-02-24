@@ -1,4 +1,4 @@
-package stepDefinitions.nhsLogin;
+package stepDefinitions.nhsSteps;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -20,7 +20,9 @@ public class Hook {
 
    @Before
     public void beforeScenario() {
-       // driver.navigate().to(ConfigReader.readProperty("nhsPatientUrl"));
+       //driver.navigate().to(ConfigReader.readProperty("nhsPatientUrl"));
+       driver.manage().deleteAllCookies();
+       driver.manage().window().maximize();
         System.out.println("BEFOREMETHODFRUNNED");
     }
 
