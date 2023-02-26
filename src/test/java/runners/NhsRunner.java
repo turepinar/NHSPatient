@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue= "stepDefinitions/nhsSteps",
         dryRun= false,
-        //tags ="TC1,@TC2",
+        tags = "@Proj-T14 or @Proj-T15",
         plugin= {"pretty","html:target/uiReport.html","rerun:target/uiFailedTests.txt"}
 )
 
